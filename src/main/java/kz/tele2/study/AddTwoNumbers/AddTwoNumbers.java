@@ -13,37 +13,24 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
  */
 
+import java.math.BigInteger;
+
 public class AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) return null;
-        ListNode resListNode = null;
-        ListNode lastListNode = null;
-        long a, b;
-        try {
-            String s1 = getNumberAsString(l1);
-            if (s1.length() > 19)   {
-                s1 = s1.substring(19);
-            }
-            a = Long.valueOf(reverseString(s1));
-        }   catch (Exception e) {
-            a = 0;
-        }
-        try {
-            String s1 = getNumberAsString(l2);
-            if (s1.length() > 19)   {
-                s1 = s1.substring(19);
-            }
-            b = Long.valueOf(reverseString(s1));
-        }   catch (Exception e) {
-            b = 0;
-        }
-        //System.out.println("Sum of " + Long.valueOf(String.valueOf(a)) + " and " + Long.valueOf(String.valueOf(b)));
-        long sum = a + b;
+        BigInteger a = new BigInteger(reverseString(getNumberAsString(l1)));
+        BigInteger b = new BigInteger(reverseString(getNumberAsString(l2)));
+        BigInteger sum = a.add(b);
         String sumAsString = reverseString(String.valueOf(sum));
         System.out.println("Sum string is " + sumAsString);
+        return strToListNode(sumAsString);
+    }
 
-        String[] arrOfStr = sumAsString.split("(?!^)");
+    private ListNode strToListNode(String strIn)    {
+        ListNode resListNode = null;
+        ListNode lastListNode = null;
+        String[] arrOfStr = strIn.split("(?!^)");
         int i = 0;
         for (String str : arrOfStr)   {
             if (i++ == 0) {
@@ -107,7 +94,7 @@ public class AddTwoNumbers {
         System.out.print("]");
     }
 
-    public ListNode arrToListNode(long arr[]) {
+    public ListNode arrToListNode(int arr[]) {
         ListNode node = null;
         ListNode lastNode = null;
         for (int i = 0; i < arr.length; i++)    {
