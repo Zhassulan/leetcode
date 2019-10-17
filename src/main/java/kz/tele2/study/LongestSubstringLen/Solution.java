@@ -45,6 +45,8 @@ public class Solution {
                 if (searchStr.contains(sub)) {
                     l_max = k + 1;
                     System.out.println("found, l_max = " + l_max);
+                }   else    {
+                    l_max = sub.length();
                 }
             }
         }
