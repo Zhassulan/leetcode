@@ -15,7 +15,7 @@ Explanation: 342 + 465 = 807.
 
 import java.math.BigInteger;
 
-public class AddTwoNumbers {
+public class Solution {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) return null;

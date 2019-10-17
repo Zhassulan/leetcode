@@ -1,14 +1,13 @@
 package kz.tele2.study;
 
-import kz.tele2.study.AddTwoNumbers.AddTwoNumbers;
-import kz.tele2.study.AddTwoNumbers.ListNode;
+import kz.tele2.study.AddTwoNumbers.Solution;
 import org.junit.jupiter.api.Test;
 
 public class AddTwoNumbersTest {
 
     @Test
     public void test()  {
-        AddTwoNumbers solution = new AddTwoNumbers();
+        Solution solution = new Solution();
         //int a[] = {2,4,3};
         //int b[] = {5,6,4};
 
