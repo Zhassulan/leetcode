@@ -43,5 +43,4 @@ public class LengthOfLongestSubstring {
         assertEquals(5, new Solution().lengthOfLongestSubstring("hkcpmprxxxqw"));
     }
 
-
 }
